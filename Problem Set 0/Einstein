@@ -1,0 +1,4 @@
+userInput = int(input("Enter weight in kg: "))
+speed_of_light = 300000000
+energy = userInput * speed_of_light**2
+print(energy)
