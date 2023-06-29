@@ -1,0 +1,24 @@
+def main():
+    camelCase = input("Camel case: ")
+    snake_case = convert_to_snake_case(camelCase)
+    print("Snake case: ", snake_case)
+
+
+def convert_to_snake_case(camelCase):
+    snake_case = ""
+    for char in camelCase:
+        if char.isupper():
+            snake_case += "_" + char.lower()
+        else:
+            snake_case += char
+    return snake_case.lstrip("_")
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
