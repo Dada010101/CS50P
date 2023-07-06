@@ -1,0 +1,8 @@
+vowels = ['a', 'e', 'i', 'o', 'u']
+userInput = input("Input: ")
+output = ""
+for char in userInput:
+    if char.lower() not in vowels:
+        output += char
+
+print(output)
