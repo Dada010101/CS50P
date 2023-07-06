@@ -1,0 +1,25 @@
+def main():
+    plate = input("Plate: ")
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
+
+
+def is_valid(s):
+    if len(s) >= 2 and len(s) <= 6:
+        start = s[:2]
+        if start.isalpha() and s[0] != "O":
+            found_digit = False
+            for char in s:
+                if found_digit and char.isalpha():
+                    return False
+                if char.isdigit():
+                    found_digit = True
+            if ' ' in s:
+                return False
+
+            return s
+
+
+main()
