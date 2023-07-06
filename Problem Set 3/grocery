@@ -1,0 +1,27 @@
+def main():
+    grocery_list = {}
+
+    while True:
+        try:
+            item = input()
+        except EOFError:
+            break
+        item = item.strip().title()
+
+        if item in grocery_list:
+            grocery_list[item] += 1
+        else:
+            grocery_list[item] = 1
+
+    print_grocery_list(grocery_list)
+
+
+def print_grocery_list(grocery_list):
+    sorted_items = sorted(grocery_list.keys())
+    for item in sorted_items:
+        count = grocery_list[item]
+        print(f"{count} {item.upper()}")
+
+
+if __name__ == '__main__':
+    main()
