@@ -1,0 +1,28 @@
+items = {
+    "Baja Taco": 4.00,
+    "Burrito": 7.50,
+    "Bowl": 8.50,
+    "Nachos": 11.00,
+    "Quesadilla": 8.50,
+    "Super Burrito": 8.50,
+    "Super Quesadilla": 9.50,
+    "Taco": 3.00,
+    "Tortilla Salad": 8.00
+}
+
+order_list = {}
+
+while True:
+        try:
+            order = input("Item: ")
+        except EOFError:
+            break
+        order = order.strip().title()
+        if order in items:
+            if order in order_list:
+                order_list[order] += items[order]
+            else:
+                order_list[order] = items[order]
+            total = sum(order_list.values())
+            print(f"Total: ${total:.2f}")
+
