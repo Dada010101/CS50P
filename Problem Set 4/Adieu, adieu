@@ -1,0 +1,19 @@
+names = []
+name = input()
+
+try:
+    while True:
+        names.append(name)
+        name = input()
+except EOFError:
+    pass
+
+count = len(names)
+
+if count == 0:
+    print("No names entered.")
+else:
+    output = ", ".join(names[:-1])
+    if count >= 2:
+        output += ", and " + names[-1]
+    print(f"Adieu, adieu, to {output}")
