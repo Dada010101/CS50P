@@ -1,0 +1,4 @@
+import emoji
+
+emojiUser = input("Input: ")
+print(emoji.emojize(f"Output: {emojiUser}"))
